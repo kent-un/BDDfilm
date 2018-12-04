@@ -61,11 +61,6 @@ CREATE TABLE A_realise (idARealise INT AUTO_INCREMENT NOT NULL, idPersonne INT N
 idFilm INT NOT NULL,
 PRIMARY KEY (idARealise)) ENGINE=InnoDB;
 
-DROP TABLE IF EXISTS A_ecrit ;
-CREATE TABLE A_ecrit (idAEcrit INT AUTO_INCREMENT NOT NULL, idFilm INT NOT NULL,
-idPersonne INT NOT NULL,
-PRIMARY KEY (idAEcrit)) ENGINE=InnoDB;
-
 DROP TABLE IF EXISTS Definit ;
 CREATE TABLE Definit (idDefinit INT AUTO_INCREMENT NOT NULL, idMotCle INT NOT NULL,
 idFilm INT NOT NULL,
@@ -82,7 +77,5 @@ ALTER TABLE Joue_Dans ADD CONSTRAINT FK_joue_idPersonne FOREIGN KEY (idPersonne)
 ALTER TABLE Joue_Dans ADD CONSTRAINT FK_joue_idFilm FOREIGN KEY (idFilm) REFERENCES Film (idFilm);
 ALTER TABLE A_realise ADD CONSTRAINT FK_realise_idPersonne FOREIGN KEY (idPersonne) REFERENCES Personne (idPersonne);
 ALTER TABLE A_realise ADD CONSTRAINT FK_realise_idFilm FOREIGN KEY (idFilm) REFERENCES Film (idFilm);
-ALTER TABLE A_ecrit ADD CONSTRAINT FK_ecrit_idFilm FOREIGN KEY (idFilm) REFERENCES Film (idFilm);
-ALTER TABLE A_ecrit ADD CONSTRAINT FK_ecrit_idPersonne FOREIGN KEY (idPersonne) REFERENCES Personne (idPersonne);
 ALTER TABLE Definit ADD CONSTRAINT FK_definit_idMotCle FOREIGN KEY (idMotCle) REFERENCES MotCle (idMotCle);
 ALTER TABLE Definit ADD CONSTRAINT FK_definit_idFilm FOREIGN KEY (idFilm) REFERENCES Film (idFilm);
