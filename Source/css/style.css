@@ -28,9 +28,6 @@ body{
     height:100%;
 }
 main{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
     min-width:100%;
     min-height:100%;
     background-color: #162d50ff;
@@ -54,4 +51,8 @@ h2{
     width:20em;
     background-color:white;
     color:#162d50ff;
+}
+.card img{
+    width:130px;
+    height:190px;
 }

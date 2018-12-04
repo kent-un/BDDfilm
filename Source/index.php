@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
     <?php include('php/head.php'); ?>
-    
     <title>Accueil | D codeurs du lac</title>
 </head>
 <body>

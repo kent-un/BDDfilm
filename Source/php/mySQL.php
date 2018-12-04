@@ -12,10 +12,11 @@ catch(PDOException $e)
     {
     echo "Connection failed: " . $e->getMessage();
     }
-
-$response = $bdd->query('select afficheFilm from Film');
-while ($donnees = $response->fetch()){
-    echo '<img src="'.$donnees['afficheFilm'].'"/>';
-}
-
+    
+    require 'class/film.php';
+    $response = $bdd->query("SELECT idFilm, nomFilm, afficheFilm FROM Film");
+    while($donnees = $response->fetch()){
+        $film[] = new film($donnees['nomFilm'], $donnees['afficheFilm']);
+    }
+    
 ?>
