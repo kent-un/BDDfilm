@@ -13,9 +13,9 @@ catch(PDOException $e)
     echo "Connection failed: " . $e->getMessage();
     }
 
-// $response = $bdd->query('select afficheFilm from Film');
-// while ($donnees = $response->fetch()){
-//     echo '<img src="'.$donnees['afficheFilm'].'/>';
-// }
+$response = $bdd->query('select afficheFilm from Film');
+while ($donnees = $response->fetch()){
+    echo '<img src="'.$donnees['afficheFilm'].'"/>';
+}
 
 ?>
