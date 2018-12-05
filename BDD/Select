@@ -1,0 +1,29 @@
+select pseudoUtilisateur, nomFilm, nomPersonne from Film inner join Utilisateur on Utilisateur.idUtilisateur = Film.idUtilisateur inner join A_realise on Film.idFilm = A_realise.idFilm inner join Personne on A_realise.idPersonne = Personne.idPersonne;
+
+
+SELECT nomFilm,  afficheFilm, resumeFilm, anneeFilm, 
+    dureeFilm, lienBandeAnnonce, GROUP_CONCAT(nomGenre SEPARATOR " ") as genres FROM Film LEFT JOIN Est_genre on Est_genre.idFilm = Film.idFilm LEFT JOIN Genre on Est_genre.idGenre = Genre.idGenre Group BY Film.idFilm;
+
+
+SELECT Film.idFilm, GROUP_CONCAT(nomGenre SEPARATOR " , ") as concat FROM Film 
+LEFT JOIN Est_genre on Est_genre.idFilm = Film.idFilm 
+LEFT JOIN Genre on Est_genre.idGenre = Genre.idGenre 
+Group BY Film.idFilm;
+
+
+SELECT nomFilm, afficheFilm, resumeFilm, anneeFilm, 
+dureeFilm, lienBandeAnnonce, pseudoUtilisateur, nomPays FROM Film 
+inner JOIN Utilisateur on Film.idUtilisateur = Utilisateur.idUtilisateur
+inner JOIN Vient_de on Film.idFilm = Vient_de.idFilm
+inner JOIN Pays on Vient_de.idPays = Pays.idPays;
+
+SELECT Film.idFilm, GROUP_CONCAT(nomPersonne) as concatAct FROM Film 
+LEFT JOIN Joue_Dans on Joue_Dans.idFilm = Film.idFilm 
+LEFT JOIN Personne on Personne.idPersonne = Joue_Dans.idPersonne 
+Group BY Film.idFilm
+
+Pour nom du realisateur
+SELECT Film.idFilm, nomPersonne as nomReal FROM Film 
+LEFT JOIN A_realise on A_realise.idFilm = Film.idFilm 
+LEFT JOIN Personne on Personne.idPersonne = Joue_Dans.idPersonne 
+Group BY Film.idFilm
