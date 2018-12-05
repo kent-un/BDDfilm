@@ -36,19 +36,6 @@ class film{
         return $this->afficheFilm;
     }
 
-    public function getInfoFilm($idFilm)
-    {
-        return $this->nomFilm;
-        return $this->resumeFilm;
-        return $this->anneeFilm;
-        return $this->dureeFilm;
-        return $this->nomPays;
-        return $this->lienBandeAnnonce;
-        return $this->pseudoUtilisateur;
-        return $this->concatGenre;
-        return $this->concatReal;
-        return $this->concatAct;  
-    }
 
     /**
      * Set the value of afficheFilm
@@ -117,6 +104,78 @@ class film{
         $this->concatAct = $concatAct;
 
         return $this;
+    }
+
+    /**
+     * Get the value of resumeFilm
+     */ 
+    public function getResumeFilm()
+    {
+        return $this->resumeFilm;
+    }
+
+    /**
+     * Get the value of anneeFilm
+     */ 
+    public function getAnneeFilm()
+    {
+        return $this->anneeFilm;
+    }
+
+    /**
+     * Get the value of nomPays
+     */ 
+    public function getNomPays()
+    {
+        return $this->nomPays;
+    }
+
+    /**
+     * Get the value of dureeFilm
+     */ 
+    public function getDureeFilm()
+    {
+        return $this->dureeFilm;
+    }
+
+    /**
+     * Get the value of lienBandeAnnonce
+     */ 
+    public function getLienBandeAnnonce()
+    {
+        return $this->lienBandeAnnonce;
+    }
+
+    /**
+     * Get the value of pseudoUtilisateur
+     */ 
+    public function getPseudoUtilisateur()
+    {
+        return $this->pseudoUtilisateur;
+    }
+
+    /**
+     * Get the value of concatGenre
+     */ 
+    public function getConcatGenre()
+    {
+        return $this->concatGenre;
+    }
+
+    /**
+     * Get the value of concatReal
+     */ 
+    public function getConcatReal()
+    {
+        return $this->concatReal;
+    }
+
+    /**
+     * Get the value of concatAct
+     */ 
+    public function getConcatAct()
+    {
+        return $this->concatAct;
     }
 }
 ?>

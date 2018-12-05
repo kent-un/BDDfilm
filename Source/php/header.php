@@ -17,7 +17,7 @@
                         <a class="nav-link" href="voir.php">Voir</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Modifier</a>
+                        <a class="nav-link" href="modifier.php">Modifier</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Noter</a>
