@@ -10,10 +10,24 @@
         <div id="titleVoir">
             <h1>Liste des films</h1>
         </div>
+        <div class="modal fade" id="modalInfoFilm" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalCenterTitle"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="card-columns">
         <?php 
         for($x=0; $x<count($film) ; $x++){
-            echo '<div class="card" id="card'.$x.'"><img class="card-img" id="img-card'.$x.'" src="'.$film[$x]->getafficheFilm().'"/><div class="overlay" id="overlay-card'.$x.'"><div class="textOverlay">En savoir plus</div></div></div>';
+            echo '<div class="card" id="card'.$x.'"><img class="card-img" id="img-card'.$x.'" src="'.$film[$x]->getAfficheFilm().'"/><div class="overlay" id="overlay-card'.$x.'"><button type="button" class="btn btn-outline-secondary textOverlay" data-toggle="modal" data-target="#modalInfoFilm" onclick="loadInfo('.$x.')">En savoir plus</button></div></div>';
         }
         ?>
         </div>

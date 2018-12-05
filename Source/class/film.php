@@ -12,8 +12,8 @@ class film{
     private $concatReal;
     private $concatAct;
 
-    public function __construct($nomFilm, $afficheFilm, $resumeFilm, $anneeFilm, $dureeFilm, $nomPays,
-    $lienBandeAnnonce, $pseudoUtilisateur, $concatGenre=NULL, $concatReal=NULL, $concatAct=NULL){
+    public function __construct($nomFilm=NULL, $afficheFilm=NULL, $resumeFilm=NULL, $anneeFilm=NULL, $dureeFilm=NULL, $nomPays=NULL,
+    $lienBandeAnnonce=NULL, $pseudoUtilisateur=NULL, $concatGenre=NULL, $concatReal=NULL, $concatAct=NULL){
         
         $this->nomFilm = $nomFilm;
         $this->afficheFilm = $afficheFilm;
