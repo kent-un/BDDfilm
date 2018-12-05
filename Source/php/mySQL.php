@@ -15,10 +15,9 @@ catch(PDOException $e)
     }
     
     require 'class/film.php';
-    $response = $bdd->query("SELECT afficheFilm FROM Film");
+    $response = $bdd->query("SELECT idFilm, nomFilm, afficheFilm FROM Film order by Film.idFilm ASC");
 
     while($donnees = $response->fetch()){  
-            $film[] = new film($donnees['afficheFilm']);
+            $film[] = new film($donnees['nomFilm'],$donnees['afficheFilm']);
     }
-
 ?>
