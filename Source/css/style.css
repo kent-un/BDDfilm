@@ -44,6 +44,24 @@ h1{
 h2{
     font-size:2em;
 }
+h3{
+    margin:1%;
+    font-weight: bold;
+    font-size:1em;
+}
+.modal-body{
+    font-size:0.8em;
+}
+.resume{
+    text-align: justify;
+}
+.card-info{
+    background-color: rgb(167, 166, 166);
+    margin:5px;
+}
+.btn{
+    margin:5px;
+}
 #cadreDcodeurs{
     margin-bottom: 10%;
     margin-left: auto;
@@ -52,7 +70,7 @@ h2{
     background-color:white;
     color:#162d50ff;
 }
-.card{
+.display-card{
     border:none;
     background-color:black;
 }

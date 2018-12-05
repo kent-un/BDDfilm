@@ -27,7 +27,7 @@
         <div class="card-columns">
         <?php 
         for($x=0; $x<count($film) ; $x++){
-            echo '<div class="card" id="card'.$x.'"><img class="card-img" id="img-card'.$x.'" src="'.$film[$x]->getAfficheFilm().'"/><div class="overlay" id="overlay-card'.$x.'"><button type="button" class="btn btn-outline-secondary textOverlay" data-toggle="modal" data-target="#modalInfoFilm" onclick="loadInfo('.$x.')">En savoir plus</button></div></div>';
+            echo '<div class="card display-card" id="card'.$x.'"><img class="card-img" id="img-card'.$x.'" src="'.$film[$x]->getAfficheFilm().'"/><div class="overlay" id="overlay-card'.$x.'"><button type="button" class="btn btn-outline-secondary textOverlay" data-toggle="modal" data-target="#modalInfoFilm" onclick="loadInfo('.$x.')">En savoir plus</button></div></div>';
         }
         ?>
         </div>
