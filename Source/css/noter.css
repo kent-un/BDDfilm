@@ -1,17 +1,33 @@
-/*----------------------------design formulaire de note------------------------------*/
+/*---------------------------- design formulaire de note ------------------------------*/
 #choiPerso {
-    margin-top: 20%;
-    width: 40%;
+    margin-top: 40%;/*-------------------- marge entre le haut de page et mon premier select ---------------------*/
+    width: 40%;/*------------------------- taille de mon select ----------------------------*/
 }
 #choiFilm {
-    margin-top: 2%;
-    width: 40%;
+    margin-top: 5%;/*-------------------- marge entre mon premier select et mon deuxième select ---------------------*/
+    width: 40%;/*------------------------- taille de mon deuxième select ----------------------------*/
 }
 #fontSelect {
+    align-items: center;/*---------- align mes select au centre ------------*/
     display: flex;
-    align-items: center;/*----------align mes select au centre------------*/
-    flex-direction: column;
+    flex-direction: column;/*---------------------- positionne mai select en colonne -----------------------*/
+}
+
+img { 
+    margin-top: 5%;/*-------------------- marge entre mon deuxieme select et mes etoiles ---------------------*/
+    padding-right: 1%;/*------------------------- marge entre les etoiles ---------------------------*/
+    width: 7%;/*------------------------------ taille de mes etoiles -------------------------------*/
+}
+
+/*------------------------ remplissage de mes différante etoile (note) --------------------------*/
+#etoile:hover {
+    background-image: url("../img/starJaune.svg");/*-------------- image avec font coloré -------------*/
+    background-repeat: no-repeat;/*--------------- eviter la répétition de mes images ----------------*/
+}
+
+#envoi {
+    margin-top: 5%;
 }
 
 
-/*----------------------------fin du design formulaire note-----------------------------*/
+/*---------------------------- fin du design formulaire note -----------------------------*/
