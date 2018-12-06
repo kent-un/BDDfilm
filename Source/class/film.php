@@ -11,9 +11,13 @@ class film{
     private $concatGenre;
     private $concatReal;
     private $concatAct;
+    private $motCle1;
+    private $motCle2;
+    private $motCle3;   
 
     public function __construct($nomFilm=NULL, $afficheFilm=NULL, $resumeFilm=NULL, $anneeFilm=NULL, $dureeFilm=NULL, $nomPays=NULL,
-    $lienBandeAnnonce=NULL, $pseudoUtilisateur=NULL, $concatGenre=NULL, $concatReal=NULL, $concatAct=NULL){
+    $lienBandeAnnonce=NULL, $pseudoUtilisateur=NULL, $concatGenre=NULL, $concatReal=NULL, $concatAct=NULL, $motCle1=NULL
+    , $motCle2=NULL, $motCle3=NULL){
         
         $this->nomFilm = $nomFilm;
         $this->afficheFilm = $afficheFilm;
@@ -25,7 +29,12 @@ class film{
         $this->pseudoUtilisateur = $pseudoUtilisateur;
         $this->concatGenre = $concatGenre;
         $this->concatReal = $concatReal;
-        $this->concatAct = $concatAct;      
+        $this->concatAct = $concatAct;   
+        $this->motCle1 = $motCle1;  
+        $this->motCle2 = $motCle2;  
+        $this->motCle3 = $motCle3;  
+
+
     }
 
     /**
@@ -176,6 +185,66 @@ class film{
     public function getConcatAct()
     {
         return $this->concatAct;
+    }
+
+    /**
+     * Get the value of motCle1
+     */ 
+    public function getMotCle1()
+    {
+        return $this->motCle1;
+    }
+
+    /**
+     * Set the value of motCle1
+     *
+     * @return  self
+     */ 
+    public function setMotCle1($motCle1)
+    {
+        $this->motCle1 = $motCle1;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of motCle2
+     */ 
+    public function getMotCle2()
+    {
+        return $this->motCle2;
+    }
+
+    /**
+     * Set the value of motCle2
+     *
+     * @return  self
+     */ 
+    public function setMotCle2($motCle2)
+    {
+        $this->motCle2 = $motCle2;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of motCle3
+     */ 
+    public function getMotCle3()
+    {
+        return $this->motCle3;
+    }
+
+    /**
+     * Set the value of motCle3
+     *
+     * @return  self
+     */ 
+    public function setMotCle3($motCle3)
+    {
+        $this->motCle3 = $motCle3;
+
+        return $this;
     }
 }
 ?>
