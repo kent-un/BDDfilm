@@ -66,6 +66,10 @@ CREATE TABLE Definit (idDefinit INT AUTO_INCREMENT NOT NULL, idMotCle INT NOT NU
 idFilm INT NOT NULL,
 PRIMARY KEY (idDefinit)) ENGINE=InnoDB;
 
+DROP TABLE IF EXISTS Note ; 
+CREATE TABLE Note (idNote INT AUTO_INCREMENT NOT NULL, noteUtilisateur INT NOT NULL,
+idFilm INT NOT NULL, idUtilisateur INT NOT NULL,
+PRIMARY KEY (idNote)) ENGINE=InnoDB; 
 
 ALTER TABLE Film ADD CONSTRAINT FK_Film_idUtilisateur FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur (idUtilisateur);
 ALTER TABLE Personne ADD CONSTRAINT FK_personne_idPays FOREIGN KEY (idPays) REFERENCES Pays (idPays);
@@ -79,3 +83,5 @@ ALTER TABLE A_realise ADD CONSTRAINT FK_realise_idPersonne FOREIGN KEY (idPerson
 ALTER TABLE A_realise ADD CONSTRAINT FK_realise_idFilm FOREIGN KEY (idFilm) REFERENCES Film (idFilm);
 ALTER TABLE Definit ADD CONSTRAINT FK_definit_idMotCle FOREIGN KEY (idMotCle) REFERENCES MotCle (idMotCle);
 ALTER TABLE Definit ADD CONSTRAINT FK_definit_idFilm FOREIGN KEY (idFilm) REFERENCES Film (idFilm);
+ALTER TABLE Note ADD CONSTRAINT FK_note_idUtilisateur FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur (idUtilisateur); 
+ALTER TABLE Note ADD CONSTRAINT FK_note_idFilm FOREIGN KEY (idFilm) REFERENCES Film (idFilm);

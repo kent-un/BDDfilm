@@ -17,10 +17,13 @@
                         <a class="nav-link" href="voir.php">Voir</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="ajouter.php">Ajouter</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="modifier.php">Modifier</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Noter</a>
+                        <a class="nav-link" href="noter.php">Noter</a>
                     </li>
                 </ul>
             </div>

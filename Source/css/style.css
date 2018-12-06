@@ -41,6 +41,9 @@ h1{
     color:white;
     font-size:1.5em;
 }
+.presentation h1{
+    margin-top:30%;
+}
 h2{
     font-size:2em;
 }
@@ -63,7 +66,7 @@ h3{
     margin:5px;
 }
 #cadreDcodeurs{
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     margin-left: auto;
     margin-right: auto;
     width:20em;
@@ -88,6 +91,9 @@ h3{
     .card-columns{
         column-count: 4;
         margin: 5%;
+    }
+    .presentation h1{
+        margin-top:15%;
     }
 }
 .overlay { /* Sit on top of the page content */
