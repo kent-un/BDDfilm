@@ -13,7 +13,7 @@ $('.card').mouseleave(function (e) {
 
 function loadInfo(x) {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {=$
+    xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("ModalCenterTitle").innerHTML = this.response;
     }
