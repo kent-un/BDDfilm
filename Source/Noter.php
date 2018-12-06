@@ -23,16 +23,15 @@
                 </select>
             </div>
 
-            <ul class="echelle-note">
-                <li>
-                    <img src="../img/star.svg" width="3%">
-                    <img src="../img/star.svg" width="3%">
-                    <img src="../img/star.svg" width="3%">
-                    <img src="../img/star.svg" width="3%">
-                    <img src="../img/star.svg" width="3%">
-                </li>
-            </ul>
-
+            <img id="etoile" src="img/star.svg">
+            <img id="etoile" src="img/star.svg">
+            <img id="etoile" src="img/star.svg">
+            <img id="etoile" src="img/star.svg">
+            <img id="etoile" src="img/star.svg">
+            
+            <div id="envoi">
+            <input id="envoyer" type="button" value="envoyer">
+            </div>
 
         </form>
     </main><!-------------ici ce fini mon formulaire de note------------->
