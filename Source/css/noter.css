@@ -1,0 +1,17 @@
+/*----------------------------design formulaire de note------------------------------*/
+#choiPerso {
+    margin-top: 20%;
+    width: 40%;
+}
+#choiFilm {
+    margin-top: 2%;
+    width: 40%;
+}
+#fontSelect {
+    display: flex;
+    align-items: center;/*----------align mes select au centre------------*/
+    flex-direction: column;
+}
+
+
+/*----------------------------fin du design formulaire note-----------------------------*/
