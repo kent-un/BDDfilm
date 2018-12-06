@@ -12,7 +12,7 @@
         <form id="form" method="POST">
         <div class="form-group">
         <label id="label" for="formModif">Sélectionner votre film</label>
-            <select multiple class="form-control" id="formModif" onclik="affEnr()">
+            <select multiple class="form-control" id="formModif" onclick="affEnr()">
             
             <?php 
                 for($x=0; $x<count($film) ; $x++){
