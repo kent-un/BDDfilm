@@ -10,14 +10,20 @@ class film{
     private $pseudoUtilisateur;
     private $concatGenre;
     private $concatReal;
+    private $Real;
+    private $paysReal;
     private $concatAct;
+    private $act1;
+    private $paysAct1;
+    private $act2;
+    private $paysAct2;
     private $motCle1;
     private $motCle2;
     private $motCle3;   
 
     public function __construct($nomFilm=NULL, $afficheFilm=NULL, $resumeFilm=NULL, $anneeFilm=NULL, $dureeFilm=NULL, $nomPays=NULL,
-    $lienBandeAnnonce=NULL, $pseudoUtilisateur=NULL, $concatGenre=NULL, $concatReal=NULL, $concatAct=NULL, $motCle1=NULL
-    , $motCle2=NULL, $motCle3=NULL){
+    $lienBandeAnnonce=NULL, $pseudoUtilisateur=NULL, $concatGenre=NULL, $concatReal=NULL, $real=NULL, $paysReal=NULL, $concatAct=NULL,
+     $act1=NULL, $paysAct1=NULL, $act2=NULL, $paysAct2=NULL, $motCle1=NULL, $motCle2=NULL, $motCle3=NULL){
         
         $this->nomFilm = $nomFilm;
         $this->afficheFilm = $afficheFilm;
@@ -29,7 +35,13 @@ class film{
         $this->pseudoUtilisateur = $pseudoUtilisateur;
         $this->concatGenre = $concatGenre;
         $this->concatReal = $concatReal;
-        $this->concatAct = $concatAct;   
+        $this->real = $real;
+        $this->paysReal = $paysReal;       
+        $this->concatAct = $concatAct;  
+        $this->act1 = $act1;
+        $this->paysAct1 = $paysAct1;  
+        $this->act2 = $act2;
+        $this->paysAct2 = $paysAct2;   
         $this->motCle1 = $motCle1;  
         $this->motCle2 = $motCle2;  
         $this->motCle3 = $motCle3;  
@@ -243,6 +255,126 @@ class film{
     public function setMotCle3($motCle3)
     {
         $this->motCle3 = $motCle3;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Real
+     */ 
+    public function getReal()
+    {
+        return $this->Real;
+    }
+
+    /**
+     * Set the value of Real
+     *
+     * @return  self
+     */ 
+    public function setReal($Real)
+    {
+        $this->Real = $Real;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of paysReal
+     */ 
+    public function getPaysReal()
+    {
+        return $this->paysReal;
+    }
+
+    /**
+     * Set the value of paysReal
+     *
+     * @return  self
+     */ 
+    public function setPaysReal($paysReal)
+    {
+        $this->paysReal = $paysReal;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of act1
+     */ 
+    public function getAct1()
+    {
+        return $this->act1;
+    }
+
+    /**
+     * Set the value of act1
+     *
+     * @return  self
+     */ 
+    public function setAct1($act1)
+    {
+        $this->act1 = $act1;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of paysAct1
+     */ 
+    public function getPaysAct1()
+    {
+        return $this->paysAct1;
+    }
+
+    /**
+     * Set the value of paysAct1
+     *
+     * @return  self
+     */ 
+    public function setPaysAct1($paysAct1)
+    {
+        $this->paysAct1 = $paysAct1;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of act2
+     */ 
+    public function getAct2()
+    {
+        return $this->act2;
+    }
+
+    /**
+     * Set the value of act2
+     *
+     * @return  self
+     */ 
+    public function setAct2($act2)
+    {
+        $this->act2 = $act2;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of paysAct2
+     */ 
+    public function getPaysAct2()
+    {
+        return $this->paysAct2;
+    }
+
+    /**
+     * Set the value of paysAct2
+     *
+     * @return  self
+     */ 
+    public function setPaysAct2($paysAct2)
+    {
+        $this->paysAct2 = $paysAct2;
 
         return $this;
     }
