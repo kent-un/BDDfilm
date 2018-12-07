@@ -1,6 +1,10 @@
 /*---------------------------- design formulaire de note ------------------------------*/
+h1 {
+    margin-top: 40%;
+}
 #choiPerso {
-    margin-top: 40%;/*-------------------- marge entre le haut de page et mon premier select ---------------------*/
+    margin-top: 5%;/*-------------------- marge entre le haut de page et mon premier select ---------------------*/
+    
     width: 40%;/*------------------------- taille de mon select ----------------------------*/
 }
 #choiFilm {
@@ -20,13 +24,22 @@ img {
 }
 
 /*------------------------ remplissage de mes différante etoile (note) --------------------------*/
-#etoile:hover {
+.etoile:hover {
     background-image: url("../img/starJaune.svg");/*-------------- image avec font coloré -------------*/
     background-repeat: no-repeat;/*--------------- eviter la répétition de mes images ----------------*/
 }
 
+/*--------------------- positionnement de mon bouton envoyer ---------------------*/
 #envoi {
-    margin-top: 5%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+/*--------------------font du formulaire------------------*/
+form {
+    background-color: rgb(0, 0, 0);
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 

@@ -5,7 +5,7 @@ $BDDFilm = new PDO('mysql:host=localhost; dbname=BDDFilm; charset=utf8', 'BDDFil
 $reponse = $BDDFilm->query('SELECT * FROM Utilisateur');
 
 while ($donnees = $reponse->fetch()){
-    echo '<option>' . $donnees['pseudoUtilisateur'] . '</option>';
+    echo '<option value="' . $donnees['idUtilisateur'] . '">' . $donnees['pseudoUtilisateur'] . '</option>';
 };
 ?>
 
