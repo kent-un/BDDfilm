@@ -1,4 +1,5 @@
 
+
 function affEnr(x){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -10,3 +11,8 @@ function affEnr(x){
   xhttp.open('GET', "updateFilm.php?idFilm="+x, true);
   xhttp.send();
 };
+
+        
+
+
+

@@ -1,8 +1,8 @@
 <?php 
-
 $_SESSION['idFilmAModifier'] = $_GET['idFilm'];
 include('php/recupModif.php');
 ?>
+
 
 <form class="needs-validation" novalidate>
 <div class="form-row">
@@ -88,7 +88,6 @@ include('php/recupModif.php');
       Looks good!
       </div>
     </div>
-
 
     <div class="col-md-12 mb-3">
         <label for="exampleFormControlTextarea1">Résumé du film</label>

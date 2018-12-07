@@ -27,17 +27,21 @@ catch(PDOException $e)
     LEFT JOIN Genre on Est_genre.idGenre = Genre.idGenre 
     WHERE Film.idFilm = $x
     Group BY Film.idFilm"); 
-    $response2 = $bdd->query("SELECT Film.idFilm, GROUP_CONCAT(nomPersonne) as concatAct FROM Film 
+    $response2 = $bdd->query("SELECT Film.idFilm, nomPersonne, nomPays FROM Film 
     LEFT JOIN Joue_Dans on Joue_Dans.idFilm = Film.idFilm 
     LEFT JOIN Personne on Personne.idPersonne = Joue_Dans.idPersonne 
-    WHERE Film.idFilm = $x
-    Group BY Film.idFilm"); 
-    $response3 = $bdd->query("SELECT Film.idFilm, Group_CONCAT(nomPersonne) as concatReal FROM Film 
+    LEFT JOIN Pays on Pays.idPays = Personne.idPays
+    WHERE Film.idFilm = $x"); 
+    $response3 = $bdd->query("SELECT Film.idFilm, nomPersonne, nomPays FROM Film 
     LEFT JOIN A_realise on A_realise.idFilm = Film.idFilm 
     LEFT JOIN Personne on Personne.idPersonne = A_realise.idPersonne 
-    WHERE Film.idFilm = $x
-    Group BY Film.idFilm");
+    LEFT JOIN Pays on Pays.idPays = Personne.idPays
+    WHERE Film.idFilm = $x");
     $response4 = $bdd->query("SELECT MotCle FROM Film 
+    LEFT JOIN Definit on Definit.idFilm = Film.idFilm 
+    LEFT JOIN MotCle on Definit.idMotCle = MotCle.idMotCle
+    WHERE Film.idFilm = $x");
+    $response5 = $bdd->query("SELECT MotCle FROM Film 
     LEFT JOIN Definit on Definit.idFilm = Film.idFilm 
     LEFT JOIN MotCle on Definit.idMotCle = MotCle.idMotCle
     WHERE Film.idFilm = $x");
@@ -50,12 +54,27 @@ catch(PDOException $e)
  
     $donnees1 = $response1->fetch();
     $film[0]->setConcatGenre($donnees1['concatGenre']);
-    $donnees2 = $response2->fetch();
-    $film[0]->setConcatAct($donnees2['concatAct']);
-    $donnees3 = $response3->fetch();
-    $film[0]->setConcatReal($donnees3['concatReal']);
 
-   
+
+    for($i=0; $i<2 ; $i++){
+        $donnees2 = $response2->fetch();
+        switch ($i) {
+            case 0:
+            $film[0]->setAct1($donnees2['nomPersonne']);
+            $film[0]->setPaysAct1($donnees2['nomPays']);          
+            break;
+            case 1:
+            $film[0]->setAct2($donnees2['nomPersonne']);
+            $film[0]->setPaysAct2($donnees2['nomPays']);
+            break;
+
+        }
+    }
+
+    $donnees3 = $response3->fetch();
+    $film[0]->setReal($donnees3['nomPersonne']);
+    $film[0]->setPaysReal($donnees3['nomPays']);          
+    
     for($i=0; $i<3 ; $i++){
         $donnees4 = $response4->fetch();
         switch ($i) {
