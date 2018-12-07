@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <?php include('php/head.php'); ?>
+    <?php include('php/mySQL.php');?>
     <title>Films | D codeurs du lac</title>
 </head>
 <body>
