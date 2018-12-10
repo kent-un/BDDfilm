@@ -13,36 +13,74 @@
         <div id="titleVoir">
             <h1>Ajouter un film</h1>
         </div>
-        <form method="get" action="php/formAjouter.php" id="formAjouter">
+        <form method="post" action="php/formAjouter.php" id="formAjouter">
             <div class="form-row">
                 <div class="form-group col-12">
                     <label for="inputUtilisateur">Nom d'utilisateur</label>
-                    <select multiple class="form-control" id="inputUtilisateur">
+                    <select multiple class="form-control" id="selectUtilisateur" name="selectUtilisateur">
                         <?php 
                         $response4 = $bdd->query("SELECT pseudoUtilisateur FROM Utilisateur");
+                        $i=1;
                         while($donnees4 = $response4->fetch()){  
-                            echo '<option class="listFim" id="listFilm'.$x.'">'.$donnees4['pseudoUtilisateur'].'</option>';
+                            echo '<option class="listFim" id="listFilm'.$x.'" value="'.$i.'">'.$donnees4['pseudoUtilisateur'].'</option>';
+                            $i++;
                         }
                         ?> 
                     </select>
                 </div>
             </div>
-            <div class="form-group col-12">
-                    <label for="inputNomFilm">Nom du film</label>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="inputNomFilm">Titre du film</label>
                     <input type="text" class="form-control" id="inputNomFilm" name="inputNomFilm">
                 </div>
+            </div>
             <div class="form-row">
-                <div class="form-group col-4">
+                <div class="form-group col-3">
                     <label for="inputNomFilm">Genre du film</label>
                     <input type="text" class="form-control" id="inputGenreFilm" name="inputGenreFilm">
                 </div>
-                <div class="form-group col-4">
+                <div class="form-group col-3">
+                    <label for="inputNomFilm">Durée du film</label>
+                    <input type="text" class="form-control" id="inputDureeFilm" name="inputDureeFilm">
+                </div>
+                <div class="form-group col-3">
                     <label for="inputAnneeFilm">Année du film</label>
                     <input type="text" class="form-control ui-datepicker-inline" id="inputAnneeFilm" name="inputAnneeFilm">
                 </div>
-                <div class="form-group col-4">
+                <div class="form-group col-3">
                     <label for="inputOrigineFilm">Pays d'origine du film</label>
                     <input type="text" class="form-control ui-autocomplete" id="inputOrigineFilm" name="inputOrigineFilm">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="inputRealFilm">Nom du réalisateur</label>
+                    <input type="text" class="form-control" name="inputRealFilm" id="inputRealFilm">
+                </div>
+                <div class="form-group col-6">
+                    <label for="inputPaysRealFilm">Pays d'origine du réalisateur</label>
+                    <input type="text" class="form-control" name="inputPaysRealFilm" id="inputPaysRealFilm">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="inputActeur1Film">Nom acteur principal</label>
+                    <input type="text" class="form-control" name="inputActeur1Film" id="inputActeur1Film">
+                </div>
+                <div class="form-group col-6">
+                    <label for="inputPays1Film">Pays d'origine acteur principal</label>
+                    <input type="text" class="form-control" name="inputPays1Film" id="inputPays1Film">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="inputActeur2Film">Nom du deuxième acteur principal</label>
+                    <input type="text" class="form-control" name="inputActeur2Film" id="inputActeur2Film">
+                </div>
+                <div class="form-group col-6">
+                    <label for="inputPays2Film">Pays d'origine du deuxième acteur principal</label>
+                    <input type="text" class="form-control" name="inputPays2Film" id="inputPays2Film">
                 </div>
             </div>
             <div class="form-row">
@@ -62,36 +100,20 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-6">
-                    <label for="inputActeur1Film">Nom acteur principal</label>
-                    <input type="text" class="form-control" name="inputActeur1Film" id="inputActeur1Film">
+                <div class="form-group col-4">
+                    <label for="inputMC1Film">Mot-clé 1</label>
+                    <input type="text" class="form-control" id="inputMC1Film" name="inputMC1Film">
                 </div>
-                <div class="form-group col-6">
-                    <label for="inputActeur2Film">Nom du deuxième acteur principal</label>
-                    <input type="text" class="form-control" name="inputActeur2Film" id="inputActeur2Film">
+                <div class="form-group col-4">
+                    <label for="inputMC1Film">Mot-clé 2</label>
+                    <input type="text" class="form-control" id="inputMC2Film" name="inputMC2Film">
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <label for="inputPays1Film">Pays d'origine acteur principal</label>
-                    <input type="text" class="form-control" name="inputPays1Film" id="inputPays1Film">
-                </div>
-                <div class="form-group col-6">
-                    <label for="inputPays2Film">Pays d'origine du deuxième acteur principal</label>
-                    <input type="text" class="form-control" name="inputPays2Film" id="inputPays2Film">
+                <div class="form-group col-4">
+                    <label for="inputMC3Film">Mot-clé 3</label>
+                    <input type="text" class="form-control" id="inputMC3Film" name="inputMC3Film">
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <label for="inputRealFilm">Nom du réalisateur</label>
-                    <input type="text" class="form-control" name="inputRealFilm" id="inputRealFilm">
-                </div>
-                <div class="form-group col-6">
-                    <label for="inputPaysRealFilm">Pays d'origine du réalisateur</label>
-                    <input type="text" class="form-control" name="inputPaysRealFilm" id="inputPaysRealFilm">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-outline-light">Ajouter le film</button>
+            <button type="submit" name="envoi" class="btn btn-outline-light">Ajouter le film</button>
         </form>
         
     </main>
