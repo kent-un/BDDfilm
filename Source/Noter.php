@@ -18,23 +18,25 @@
         <form method="post" action="traitnote.php">
          
             <div id="fontSelect">
-                <select id="choiPerso">
+                <select id="choiPerso" name="ChoixPerso">
                     <?php include('nomUtile.php');?><!------------------appel de la page nomUtile.php------------------->
                 </select>
 
-                <select id="choiFilm">
+                <select id="choiFilm" name="ChoixFilm">
                     <?php include('filmPref.php');?><!---------------appel de la page filmPref.php----------------->
                 </select>
             </div>
 
-            <img id="etoile1" src="img/star.svg" class="etoile">
-            <img id="etoile2" src="img/star.svg" class="etoile">
-            <img id="etoile3" src="img/star.svg" class="etoile">
-            <img id="etoile4" src="img/star.svg" class="etoile">
-            <img id="etoile5" src="img/star.svg" class="etoile">
-            
+            <div class="etoileNote" name="EtoileNote">
+                <img id="etoile1" src="img/star.svg" class="etoile">
+                <img id="etoile2" src="img/star.svg" class="etoile">
+                <img id="etoile3" src="img/star.svg" class="etoile">
+                <img id="etoile4" src="img/star.svg" class="etoile">
+                <img id="etoile5" src="img/star.svg" class="etoile">
+            </div>
+            <input type="hidden" name="stars" id="stars" > 
             <div id="envoi">
-            <input id="envoyer" type="submit"  name="envoyer">
+            <input id="envoyer" type="submit">
         </div>
 
 
@@ -55,4 +57,5 @@
    
 </body>
 </html>
+
 
