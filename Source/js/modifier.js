@@ -12,6 +12,8 @@ function affEnr(x){
   xhttp.send();
 };
 
+
+
         
 
 

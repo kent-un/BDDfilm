@@ -4,8 +4,3 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 
-<?php
-// start session 
-session_start();
-/*session is started if you don't write this line can't use $_Session  global variable*/
-?>

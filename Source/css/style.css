@@ -124,6 +124,11 @@ h3{
     width: 80%;
  
  }
+
+ #formLoaded{
+    padding-left: 20%;
+    width: 80%;  
+ }
  
  #label{
      color: white;
