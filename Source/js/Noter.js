@@ -10,11 +10,6 @@ var Etoil4 = document.getElementById("etoile4");
 var Etoil5 = document.getElementById("etoile5");
 var inputStars= document.getElementById("stars");
 
-/*    var star = [0,0,0,0,0];
-var i;      */
-
-
-
 Etoil1.addEventListener("click", function() {/* au click de l'etoile1, */
     Etoil1.style.backgroundImage="url('img/starJaune.svg')";/* affiche etoile colorer */
     Etoil1.style.backgroundRepeat="no-repeat";/* ne repete pas l'image */
@@ -65,6 +60,25 @@ Etoil5.addEventListener("click", function() {/* au click de l'Etoile5, */
     inputStars.value="5";
     
 });
+/* fonction = o clic d'une etoile, l'etoile 
+en question ce color, ainsi que toute celle qui
+la précède */
+function afficheMoyene(AM) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log('oki');
+            document.getElementById("recupNoteMoyene").innerHTML = this.responseText;
+        }
+    };
+    
+    xhttp.open('GET', "php/updateNoter.php?idFilm="+AM, true);
+    xhttp.send();
+
+}
+
+/*--------------- rechargement de ma page ---------------*/
+
 
 
 /*    for(i = 0; i < StaticRange.length; i++){

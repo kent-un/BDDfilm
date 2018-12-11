@@ -1,6 +1,6 @@
 /*---------------------------- design formulaire de note ------------------------------*/
 h1 {
-    margin-top: 40%;
+    margin-top: 35%;
 }
 #choiPerso {
     margin-top: 5%;/*-------------------- marge entre le haut de page et mon premier select ---------------------*/
@@ -18,7 +18,7 @@ h1 {
 }
 
 img { 
-    margin-top: 5%;/*-------------------- marge entre mon deuxieme select et mes etoiles ---------------------*/
+    margin-top: 0%;/*-------------------- marge entre mon deuxieme select et mes etoiles ---------------------*/
     padding-right: 1%;/*------------------------- marge entre les etoiles ---------------------------*/
     width: 7%;/*------------------------------ taille de mes etoiles -------------------------------*/
 }
@@ -37,10 +37,21 @@ img {
 
 /*--------------------font du formulaire------------------*/
 form {
-    background-color: rgb(0, 0, 0);
     margin-left: 10%;
     margin-right: 10%;
 }
 
+/*---------- design note ---------*/
+#recupNoteMoyene {
+    color: white;
+    font-size: 20px;
+    margin-top: 2%;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+    margin-top: 6%;
+}
 
 /*---------------------------- fin du design formulaire note -----------------------------*/
