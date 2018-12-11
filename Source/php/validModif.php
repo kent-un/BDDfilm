@@ -85,7 +85,7 @@ try {
     $stmt = $bdd->prepare($sql);
     $stmt->execute();
 
-    // et on insere les nouveaux mots clé
+    // et on insere les nouveaux acteurs
     $sql = "insert into Joue_Dans (idPersonne, idFilm) values ('$idActeur1','$idFilm')";
     $stmt = $bdd->prepare($sql);
     $stmt->execute();
@@ -95,6 +95,39 @@ try {
     $stmt->execute();
 
     // Mise à jour de la table du Genre
+    // $genreFilm contient l'ensemble des genres séparés par des ,
+    $genre = explode(",", $genreFilm);  
+    for ($i=0; $i<count($genre); $i++) {
+        // verif si le genre existe dans la table Genre
+        $sql = "select idGenre from Genre where nomGenre='$genre[$i]'";
+        $stmt = $bdd->prepare($sql);
+        $stmt->execute();  
+        if ($stmt->rowCount()==0) {
+            // si le genre n'existe pas on l'insert dans la table
+            $sql = "insert into Genre (nomGenre) values ('$genre[$i]')";
+            $stmt = $bdd->prepare($sql);
+            $stmt->execute();
+        }
+        // recuperation des id des genres
+        $sql = "select idGenre from Genre where nomGenre='$genre[$i]'";
+        $stmt = $bdd->prepare($sql);
+        $stmt->execute();   
+        $donnees = $stmt->fetch(); 
+        $idGenreTab[$i] = $donnees['idGenre'];
+ 
+    }
+    // on supprime les anciens liens genre / film 
+    $sql = "delete from Est_genre where idFilm='$idFilm'";
+    $stmt = $bdd->prepare($sql);
+    $stmt->execute();
+
+    // et on insere les nouveaux liens genre / film
+    for ($i=0; $i<count($idGenreTab); $i++) {
+        $sql = "insert into Est_genre (idFilm, idGenre) values ('$idFilm','$idGenreTab[$i]')";
+        $stmt = $bdd->prepare($sql);
+        $stmt->execute();  
+    } 
+
 
 
     // Mise à jour de la table Definit pour les mots clé
@@ -116,7 +149,7 @@ try {
     $stmt = $bdd->prepare($sql);
     $stmt->execute();
 
-    echo '<h2>La modification a réussie</h2>';
+    echo '<h2>Modification effectuée</h2>';
 
 }
 catch(PDOException $e)
