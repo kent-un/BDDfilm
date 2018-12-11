@@ -40,5 +40,5 @@ echo '<div class="resume">'.$film[$nbFilm]->getResumeFilm().'</div>';
 <?php
 echo '<br>';
 echo '<a class="btn btn-outline-warning" href="'.$film[$nbFilm]->getLienBandeAnnonce().'">Bande annonce du film</a>';
-
+echo '<br><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Je vous recommande ce film!" data-hashtags="BDDFilm" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
 ?>

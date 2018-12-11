@@ -18,3 +18,9 @@ $('#inputPaysRealFilm').autocomplete({
     minLength : 1,
     autoFocus: true
 });
+
+
+$('#formAjouter').validate();
+jQuery.extend(jQuery.validator.messages, {
+    required: "<small><em>Ce champ est requis.</em></small>",
+});

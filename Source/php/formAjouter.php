@@ -3,34 +3,34 @@
 <head>
     <?php include('head.php'); ?>
     <?php include('connInfos.php'); ?>
-    <link rel="stylesheet" href="/css/ajouter.css">
-    <link rel="stylesheet" href="/js/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="../css/ajouter.css">
+    <link rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
     <title>Ajouter un film | D codeurs du lac</title>
 </head>
 <body>
     <?php include('header.php');?>
     <main>
 <?php
-$nomFilm = $_POST['inputNomFilm'];
-$genreFilm = $_POST['inputGenreFilm'];
+$nomFilm = addslashes($_POST['inputNomFilm']);
+$genreFilm = addslashes($_POST['inputGenreFilm']);
 $anneeFilm = $_POST['inputAnneeFilm'];
-$paysFilm = $_POST['inputOrigineFilm'];
-$resumeFilm = $_POST['inputResumeFilm'];
-$resumeFilmSlash = addslashes($resumeFilm);
+$paysFilm = addslashes($_POST['inputOrigineFilm']);
+$resumeFilm = addslashes($_POST['inputResumeFilm']);
 $BAFilm = $_POST['inputBAFilm'];
 $afficheFilm = $_POST['inputAfficheFilm'];
-$acteur1= $_POST['inputActeur1Film'];
-$acteur2= $_POST['inputActeur2Film'];
-$pays1= $_POST['inputPays1Film'];
-$pays2= $_POST['inputPays2Film'];
-$real= $_POST['inputRealFilm'];
-$paysReal= $_POST['inputPaysRealFilm'];
-$mc1= $_POST['inputMC1Film'];
-$mc2= $_POST['inputMC2Film'];
-$mc3= $_POST['inputMC3Film'];
+$acteur1= addslashes($_POST['inputActeur1Film']);
+$acteur2= addslashes($_POST['inputActeur2Film']);
+$pays1= addslashes($_POST['inputPays1Film']);
+$pays2= addslashes($_POST['inputPays2Film']);
+$real= addslashes($_POST['inputRealFilm']);
+$paysReal= addslashes($_POST['inputPaysRealFilm']);
+$mc1= addslashes($_POST['inputMC1Film']);
+$mc2= addslashes($_POST['inputMC2Film']);
+$mc3= addslashes(_POST['inputMC3Film']);
 $dureeFilm= $_POST['inputDureeFilm'];
-$idUtilisateur = $_POST['selectUtilisateur'];
-$servername = "localhost";
+$idUtilisateur = addslashes($_POST['selectUtilisateur']);
+$servername = "l
+ocalhost";
 $username = "BDDFilms";
 $password = "comake";
 $dbname = "BDDFilm";
@@ -50,7 +50,7 @@ try {
     else{
         //Si le film n'existe pas, alors la requête continue.
         $requete_pdo->closeCursor();
-        $requete_pdo = $conn->prepare("INSERT INTO Film (resumeFilm, anneeFilm, dureeFilm, nomFilm, afficheFilm, lienBandeAnnonce, idUtilisateur) VALUES ('$resumeFilmSlash', '$anneeFilm', '$dureeFilm', '$nomFilm', '$afficheFilm', '$BAFilm', '$idUtilisateur')");
+        $requete_pdo = $conn->prepare("INSERT INTO Film (resumeFilm, anneeFilm, dureeFilm, nomFilm, afficheFilm, lienBandeAnnonce, idUtilisateur) VALUES ('$resumeFilm', '$anneeFilm', '$dureeFilm', '$nomFilm', '$afficheFilm', '$BAFilm', '$idUtilisateur')");
         $requete_pdo->execute();
         $requete_pdo->closeCursor();
 
@@ -150,10 +150,10 @@ $conn = null;
 
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="/js/jquery-ui/external/jquery/jquery.js"></script>
-    <script src="/js/jquery-ui/jquery-ui.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script src="/js/ajouter.js"></script>
-    <script src="/js/voir.js"></script>
+    <script src="../js/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../js/jquery-ui/jquery-ui.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/ajouter.js"></script>
+    <script src="../js/voir.js"></script>
 </body>
 </html>
